@@ -1,0 +1,30 @@
+---
+import { images, site } from '../config/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer footer-center border-t border-base-300 bg-base-200 p-10 text-base-content">
+  <aside class="max-w-xl">
+    <img
+      src={images.logo}
+      alt={site.organization}
+      class="mx-auto h-20 w-auto sm:h-24"
+      width="280"
+      height="90"
+      loading="lazy"
+    />
+    <p class="mt-4 text-lg font-bold text-primary">{site.fullName}</p>
+    <p class="mt-2 opacity-70">
+      {site.event.dateShort} · {site.event.venueFull} · {site.event.time}
+    </p>
+    <p class="text-sm opacity-60">{site.tagline}</p>
+    <p class="mt-4 text-sm opacity-50">
+      &copy; {year} {site.organization}. All rights reserved.
+    </p>
+  </aside>
+</footer>
+
+<a href="#details" class="btn btn-secondary btn-circle fixed right-6 bottom-6 shadow-xl" aria-label="Back to event details">
+  ↑
+</a>

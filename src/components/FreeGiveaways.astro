@@ -1,0 +1,47 @@
+---
+import { freeGiveaways } from '../config/site';
+---
+
+<section id="giveaways" class="container mx-auto px-4 py-16 sm:py-20">
+  <div class="reveal mx-auto max-w-3xl text-center">
+    <div class="badge badge-primary badge-outline mb-4 font-semibold uppercase">While Supplies Last</div>
+    <h2 class="section-title uppercase">Free Giveaways</h2>
+    <p class="mt-4 text-lg text-base-content/70">
+      Come early — outlets and cutting boards are available while supplies last!
+    </p>
+  </div>
+
+  <div class="reveal mt-12 grid gap-6 md:grid-cols-3">
+    {
+      freeGiveaways.map((item) => (
+        <article class="card bg-base-100 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl">
+          <figure class="flex aspect-square items-center justify-center bg-white px-6 pt-6">
+            <img
+              src={item.image}
+              alt={item.alt}
+              class="max-h-full max-w-full object-contain drop-shadow-sm"
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+          </figure>
+          <div class="card-body bg-primary text-primary-content">
+            <h3 class="card-title text-xl uppercase">
+              <span class="text-secondary">Free</span> {item.title}
+            </h3>
+            <p class="text-sm leading-relaxed opacity-90">{item.description}</p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+
+  <div role="alert" class="alert alert-warning mt-8 shadow-md">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+    </svg>
+    <span class="font-semibold">
+      Outlets &amp; cutting boards are available while supplies last, so come early!
+    </span>
+  </div>
+</section>

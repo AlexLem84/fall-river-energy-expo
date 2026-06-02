@@ -1,0 +1,58 @@
+---
+import { images, site } from '../config/site';
+
+const nav = [
+  { label: 'Giveaways', href: '#giveaways' },
+  { label: 'Breakfast', href: '#breakfast' },
+  { label: 'Kids', href: '#kids' },
+  { label: 'Vote & Win', href: '#vote' },
+];
+---
+
+<div class="navbar sticky top-0 z-50 border-b border-base-300/60 bg-base-100/90 px-4 backdrop-blur-md lg:px-8">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content rounded-box bg-base-100 z-10 mt-3 w-52 p-2 shadow-lg"
+      >
+        {
+          nav.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
+        <li>
+          <a href="#details" class="font-semibold text-primary">Event Details</a>
+        </li>
+      </ul>
+    </div>
+    <a href="/" class="px-1 py-1">
+      <img src={images.logo} alt={site.organization} class="h-16 w-auto sm:h-20 lg:h-24" width="240" height="80" />
+    </a>
+  </div>
+
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal gap-1 px-1 font-semibold">
+      {
+        nav.map((item) => (
+          <li>
+            <a href={item.href} class="rounded-btn hover:bg-base-200">{item.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div class="navbar-end">
+    <a href="#details" class="btn btn-secondary font-bold uppercase tracking-wide">
+      Event Details
+    </a>
+  </div>
+</div>

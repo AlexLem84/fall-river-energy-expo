@@ -1,0 +1,50 @@
+---
+import { businessMeetingPrizes, site } from '../config/site';
+---
+
+<section class="container mx-auto px-4 py-16 sm:py-20">
+  <div class="reveal grid gap-6 lg:grid-cols-2">
+    <article class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <div class="badge badge-info badge-outline font-bold uppercase">Live Demo</div>
+        <h2 class="card-title mt-2 text-2xl font-extrabold uppercase text-primary sm:text-3xl">
+          Electrical Safety Presentation
+        </h2>
+        <p class="text-lg leading-relaxed text-base-content/70">
+          Watch a <strong>FREE</strong> live high-voltage electrical safety presentation for a chance
+          to win a <strong>portable electric generator</strong>!
+        </p>
+        <div role="alert" class="alert alert-success mt-4">
+          <span class="font-semibold">You do not need to be present to win.</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="card bg-primary text-primary-content shadow-xl">
+      <div class="card-body">
+        <div class="badge badge-secondary font-bold uppercase">Members Only</div>
+        <h2 class="card-title mt-2 text-2xl font-extrabold uppercase sm:text-3xl">
+          Annual Business Meeting
+        </h2>
+        <p class="text-3xl font-extrabold text-secondary">{site.businessMeeting.time}</p>
+        <p class="text-lg leading-relaxed opacity-90">
+          Stay for the Cooperative's annual business meeting for a chance to win one of dozens of
+          other prizes including:
+        </p>
+        <ul class="mt-2 space-y-2">
+          {
+            businessMeetingPrizes.map((prize) => (
+              <li class="flex items-center gap-2 font-semibold">
+                <span class="badge badge-secondary badge-sm">★</span>
+                {prize}
+              </li>
+            ))
+          }
+        </ul>
+        <div role="alert" class="alert mt-4 border-secondary/40 bg-secondary/20 text-secondary">
+          <span class="font-semibold">{site.businessMeeting.note}</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: fre --default;
+}
+
+@plugin "daisyui/theme" {
+  name: "fre";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: oklch(99% 0.005 255);
+  --color-base-200: oklch(96% 0.012 255);
+  --color-base-300: oklch(92% 0.02 255);
+  --color-base-content: oklch(28% 0.04 255);
+
+  --color-primary: oklch(38% 0.11 255);
+  --color-primary-content: oklch(98% 0.01 255);
+
+  --color-secondary: oklch(84% 0.17 95);
+  --color-secondary-content: oklch(30% 0.1 255);
+
+  --color-accent: oklch(84% 0.17 95);
+  --color-accent-content: oklch(30% 0.1 255);
+
+  --color-neutral: oklch(38% 0.11 255);
+  --color-neutral-content: oklch(98% 0.01 255);
+
+  --color-info: oklch(62% 0.14 240);
+  --color-info-content: oklch(98% 0.01 255);
+
+  --color-success: oklch(62% 0.15 145);
+  --color-success-content: oklch(98% 0.01 255);
+
+  --color-warning: oklch(78% 0.16 75);
+  --color-warning-content: oklch(28% 0.06 55);
+
+  --color-error: oklch(55% 0.2 25);
+  --color-error-content: oklch(98% 0.01 255);
+
+  --radius-selector: 0.75rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1rem;
+
+  --size-field: 0.3125rem;
+  --size-selector: 0.3125rem;
+}
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.reveal {
+  animation: reveal-up linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  @apply text-3xl font-extrabold tracking-tight text-primary sm:text-4xl lg:text-5xl;
+}
+
+.btn:not(.btn-circle) {
+  @apply min-h-12 px-6 py-3;
+}
+
+.btn-lg {
+  @apply min-h-14 px-8 py-4;
+}
+
+.btn-md {
+  @apply min-h-12 px-6 py-3;
+}
+
+.btn-sm {
+  @apply min-h-11 px-5 py-2.5;
+}
+
+.badge {
+  @apply gap-2 px-4 py-2.5;
+}
+
+.badge-lg {
+  @apply px-5 py-3 text-sm;
+}
+
+.badge-sm {
+  @apply px-3.5 py-2;
+}
+
+/* Portrait climbing photo — girl is upper-left; keep 3:4 frame on all breakpoints */
+.img-climbing {
+  @apply aspect-[3/4] w-full overflow-hidden;
+}
+
+.img-climbing img {
+  @apply size-full object-cover object-[22%_20%];
+}
+
+.img-kids-face {
+  @apply object-cover object-[34%_42%];
+}

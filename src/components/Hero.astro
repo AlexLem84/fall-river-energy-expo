@@ -1,0 +1,129 @@
+---
+import { images, perks, site } from '../config/site';
+---
+
+<section class="hero relative min-h-[85vh] overflow-hidden text-primary-content">
+  <img
+    src={images.heroBackground}
+    alt=""
+    class="absolute inset-0 h-full w-full object-cover object-[center_35%]"
+    width="1024"
+    height="731"
+    loading="eager"
+    fetchpriority="high"
+    aria-hidden="true"
+  />
+  <div
+    class="absolute inset-0 bg-linear-to-r from-primary/75 via-primary/50 to-primary/25"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="absolute inset-0 bg-linear-to-t from-primary/60 via-primary/10 to-transparent"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="hero-content relative z-10 w-full max-w-7xl flex-col gap-10 px-4 py-16 lg:flex-row lg:items-center lg:justify-between lg:py-20">
+    <div class="reveal max-w-2xl text-center lg:text-left">
+      <div class="badge badge-secondary badge-lg mb-4 font-bold uppercase tracking-widest shadow-lg">
+        {site.event.dateShort}
+      </div>
+      <h1 class="text-4xl font-extrabold uppercase leading-[1.05] drop-shadow-sm sm:text-5xl lg:text-6xl">
+        <span class="text-secondary">Free</span> Energy Expo<br />
+        &amp; Annual Meeting<br />
+        of Members
+      </h1>
+      <p class="mt-6 text-lg font-medium opacity-95 sm:text-xl">{site.event.venueFull}</p>
+      <p class="mt-2 text-2xl font-extrabold uppercase text-secondary drop-shadow-sm sm:text-3xl">
+        {site.event.time}
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-2 lg:justify-start">
+        {
+          perks.map((perk) => (
+            <span class="badge badge-outline badge-lg border-secondary/60 bg-primary/40 text-primary-content backdrop-blur-sm">
+              {perk}
+            </span>
+          ))
+        }
+      </div>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+        <a href="#giveaways" class="btn btn-secondary btn-lg font-bold uppercase shadow-lg">See Giveaways</a>
+        <a
+          href="#vote"
+          class="btn btn-outline btn-lg border-white/50 bg-primary/30 text-primary-content backdrop-blur-sm hover:border-white hover:bg-primary/50"
+        >
+          Vote &amp; Win
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal grid w-full max-w-xl grid-cols-2 gap-3 sm:max-w-2xl sm:gap-4 lg:grid-cols-3 lg:grid-rows-2 lg:items-stretch">
+      <figure class="card col-span-2 min-h-48 overflow-hidden bg-base-100 shadow-2xl sm:min-h-56 lg:col-span-2 lg:row-start-1 lg:min-h-0">
+        <img
+          src={images.breakfast}
+          alt="Free breakfast at the Energy Expo"
+          class="size-full object-cover object-center"
+          width="600"
+          height="400"
+          loading="eager"
+        />
+      </figure>
+
+      <figure
+        class="card col-span-1 flex overflow-hidden bg-base-100 shadow-2xl lg:col-start-3 lg:row-span-2 lg:row-start-1 lg:min-h-0"
+      >
+        <div class="img-climbing min-h-44 w-full lg:min-h-full lg:h-full">
+          <img
+            src={images.climbingWall}
+            alt="Girl smiling on the climbing wall at the Energy Expo"
+            class="size-full"
+            width="300"
+            height="400"
+            loading="eager"
+          />
+        </div>
+      </figure>
+
+      <figure class="card col-span-1 min-h-44 overflow-hidden bg-base-100 shadow-2xl lg:col-span-2 lg:row-start-2 lg:min-h-0">
+        <img
+          src={images.kidsBreakfast}
+          alt="Young girl enjoying free breakfast at the Energy Expo"
+          class="img-kids-face size-full object-cover object-[34%_45%]"
+          width="300"
+          height="200"
+          loading="eager"
+        />
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="details" class="bg-secondary py-4 text-secondary-content">
+  <div class="container mx-auto px-4">
+    <p class="text-center text-base font-extrabold uppercase tracking-wide sm:text-xl lg:text-2xl">
+      {perks.join(' • ')}
+    </p>
+  </div>
+</section>
+
+<div class="bg-base-200 py-8">
+  <div class="stats stats-vertical w-full shadow-sm lg:stats-horizontal">
+    <div class="stat place-items-center">
+      <div class="stat-title font-semibold uppercase">Date</div>
+      <div class="stat-value text-2xl text-primary">{site.event.dateShort}</div>
+    </div>
+    <div class="stat place-items-center">
+      <div class="stat-title font-semibold uppercase">Location</div>
+      <div class="stat-value text-2xl text-primary">{site.event.venue}</div>
+      <div class="stat-desc">{site.event.location}</div>
+    </div>
+    <div class="stat place-items-center">
+      <div class="stat-title font-semibold uppercase">Doors Open</div>
+      <div class="stat-value text-2xl text-primary">8 AM</div>
+      <div class="stat-desc">Come early for giveaways</div>
+    </div>
+  </div>
+</div>

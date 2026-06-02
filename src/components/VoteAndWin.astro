@@ -1,0 +1,40 @@
+---
+import { site, votePrizes } from '../config/site';
+---
+
+<section id="vote" class="bg-primary py-16 text-primary-content sm:py-20">
+  <div class="container mx-auto px-4">
+    <div class="reveal mx-auto max-w-3xl text-center">
+      <div class="badge badge-secondary mb-4 font-bold uppercase">Nearly 40 Prizes</div>
+      <h2 class="text-3xl font-extrabold uppercase sm:text-4xl lg:text-5xl">
+        Vote &amp; <span class="text-secondary">Win</span>
+      </h2>
+      <p class="mt-6 text-lg leading-relaxed opacity-90">
+        Vote in-person for your choice of board of director candidates. When you vote, your name
+        will be entered into a drawing for a chance to win one of nearly 40 prizes including:
+      </p>
+    </div>
+
+    <div class="reveal mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-cols-2">
+      {
+        votePrizes.map((prize) => (
+          <div class="flex items-center gap-3 rounded-box border border-secondary/30 bg-white/10 p-4 backdrop-blur-sm">
+            <span class="badge badge-secondary font-bold">🏆</span>
+            <span class="font-semibold">{prize}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="reveal mx-auto mt-10 max-w-3xl rounded-box bg-secondary p-6 text-center shadow-xl sm:p-8">
+      <p class="text-lg font-extrabold uppercase leading-snug text-secondary-content sm:text-2xl">
+        {site.voting.callout}
+      </p>
+    </div>
+
+    <div class="reveal mx-auto mt-8 max-w-3xl space-y-3 text-center opacity-90">
+      <p class="font-semibold text-secondary">{site.voting.closes}</p>
+      <p>{site.voting.drawing}</p>
+    </div>
+  </div>
+</section>
