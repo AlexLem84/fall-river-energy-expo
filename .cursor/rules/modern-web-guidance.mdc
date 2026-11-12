@@ -1,0 +1,10 @@
+---
+description: Apply Google Chrome's Modern Web Guidance to web UI work
+alwaysApply: true
+---
+
+# Modern Web Guidance
+
+Whenever writing or reviewing HTML, CSS, client-side JavaScript, or UI code, consult and follow the Modern Web Guidance skill in `.agents/skills/modern-web-guidance/SKILL.md`.
+
+Respect the project's documented browser targets. Apply the skill's compatibility and fallback guidance in a way that preserves support for those targets.
